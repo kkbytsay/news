@@ -1,0 +1,46 @@
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
+  \*********************************************************************************************************************************************************/
+.header {
+  box-sizing: border-box;
+  padding: 33px 16px;
+  width: 300px;
+}
+.header__logo {
+  display: block;
+  margin: 0 auto;
+}
+.header__navigation {
+  margin-top: 33px;
+}
+
+.navigation {
+  list-style: none;
+  padding-left: 0;
+}
+.navigation__link {
+  color: #878787;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 16px 16px 16px 64px;
+  border-radius: 12px;
+  display: block;
+}
+.navigation__link:hover, .navigation__link:focus, .navigation__link:active {
+  color: #503e9d;
+  background-color: rgba(80, 62, 157, 0.4470588235);
+  transition: all 0.5s;
+  font-weight: bold;
+  text-shadow: 1px 3px 0 #969696;
+}
+.navigation__link_active {
+  color: #503e9d;
+  background-color: rgba(80, 62, 157, 0.4470588235);
+  transition: all 0.5s;
+  font-weight: bold;
+  text-shadow: 1px 3px 0 #969696;
+}
+
+/*# sourceMappingURL=main.9dba2d5f177297380eca.css.map*/
