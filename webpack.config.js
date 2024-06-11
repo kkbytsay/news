@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 let mode = "development";
 let target = "web"; // в режиме разработки browserslist не используется
@@ -11,25 +12,22 @@ if (process.env.NODE_ENV === "production") {
   target = "browserslist";
 }
 
-const plugins = [
-  new HtmlWebpackPlugin({
-    template: "./src/index.html", // Данный html будет использован как шаблон
-  }),
-  new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css", // Формат имени файла
-  }),
-];
-
-if (process.env.SERVE) {
-  plugins.push(new ReactRefreshWebpackPlugin());
-}
-
-module.exports = {
+module.exports = (env) => ({
   mode,
   target,
   entry: "./src/index.js",
   devtool: "source-map",
-  plugins,
+  plugins: [
+    new Dotenv({
+      path: `./.env.${env.production ? "production" : "development"}`,
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html", // Данный html будет использован как шаблон
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css", // Формат имени файла
+    }),
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/[hash][ext][query]",
@@ -72,4 +70,4 @@ module.exports = {
       },
     ],
   },
-};
+});

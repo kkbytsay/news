@@ -13,7 +13,7 @@ function Sidebar() {
                 ? " navigation__link_active navigation__link"
                 : "navigation__link"
             }
-            to="/"
+            to={process.env.BASE_URL + "/"}
           >
             Home
           </NavLink>
@@ -25,7 +25,7 @@ function Sidebar() {
                 ? " navigation__link_active navigation__link "
                 : "navigation__link"
             }
-            to="/explore"
+            to={process.env.BASE_URL + "/explore"}
           >
             Explore
           </NavLink>
@@ -37,7 +37,7 @@ function Sidebar() {
                 ? " navigation__link_active navigation__link"
                 : "navigation__link"
             }
-            to="/saved"
+            to={process.env.BASE_URL + "/saved"}
           >
             Saved
           </NavLink>
@@ -49,7 +49,7 @@ function Sidebar() {
                 ? " navigation__link_active navigation__link"
                 : "navigation__link"
             }
-            to="/subscriptions"
+            to={process.env.BASE_URL + "/subscriptions"}
           >
             Subcriptions
           </NavLink>

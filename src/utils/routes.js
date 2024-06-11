@@ -5,20 +5,20 @@ import Subscriptions from "../pages/Subscriptions.jsx";
 
 const routes = [
   {
-    path: "",
+    path: process.env.BASE_URL + "",
     Component: Home,
   },
   {
-    path: "explore",
+    path: process.env.BASE_URL + "explore",
     Component: Explore,
   },
   {
-    path: "saved",
+    path: process.env.BASE_URL + "saved",
     Component: Saved,
   },
 
   {
-    path: "subscriptions",
+    path: process.env.BASE_URL + "subscriptions",
     Component: Subscriptions,
   },
 ];
