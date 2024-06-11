@@ -1,0 +1,3 @@
+.header{box-sizing:border-box;padding:33px 16px;width:300px}.header__logo{display:block;margin:0 auto}.header__navigation{margin-top:33px}.navigation{list-style:none;padding-left:0}.navigation__link{color:#878787;-webkit-text-decoration:none;text-decoration:none;font-size:16px;line-height:24px;padding:16px 16px 16px 64px;border-radius:12px;display:block}.navigation__link:hover,.navigation__link:focus,.navigation__link:active{color:#503e9d;background-color:rgba(80,62,157,.4470588235);transition:all .5s;font-weight:bold;text-shadow:1px 3px 0 #969696}.navigation__link_active{color:#503e9d;background-color:rgba(80,62,157,.4470588235);transition:all .5s;font-weight:bold;text-shadow:1px 3px 0 #969696}
+
+/*# sourceMappingURL=main.969c61a500075de46a32.css.map*/
