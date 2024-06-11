@@ -1,0 +1,46 @@
+@import "variables.scss";
+
+.header {
+  box-sizing: border-box;
+  padding: 33px 16px;
+  width: 300px;
+  &__logo {
+    display: block;
+    margin: 0 auto;
+  }
+  &__navigation {
+    margin-top: 33px;
+  }
+}
+
+.navigation {
+  list-style: none;
+  padding-left: 0;
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 16px 16px 64px;
+    border-radius: 12px;
+    display: block;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary;
+      background-color: $secondary;
+      transition: all 0.5s;
+      font-weight: bold;
+      text-shadow: 1px 3px 0 #969696;
+    }
+    &_active {
+      color: $primary;
+      background-color: $secondary;
+      transition: all 0.5s;
+      font-weight: bold;
+      text-shadow: 1px 3px 0 #969696;
+    }
+  }
+  &__item {
+  }
+}
