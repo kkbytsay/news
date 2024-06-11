@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.BASE_URL}>
       <Sidebar />
       <Routes>
         {routes.map((route) => {
