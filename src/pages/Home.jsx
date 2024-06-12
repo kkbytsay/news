@@ -5,7 +5,7 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/articles")
+    fetch(process.env.API_URL + "/articles")
       .then((res) => {
         return res.json();
       })
