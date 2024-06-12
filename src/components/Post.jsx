@@ -11,12 +11,17 @@ function Post(props) {
         srcset=""
       />
       <div className="post__container">
-        <Link to={"/post?" + props.post.id}>
+        <Link to={"/post?" + props.post.id} className="post__link">
           <h2 className="post__title">{props.post.title}</h2>
         </Link>
         <div className="post_info">
           <p className="post__publisher">{props.post.source.name}</p>
-          <p className="post__time">{console.log(props.post)}</p>
+          <p className="post__time">
+            {new Date(props.post.publishedAt)
+              .toISOString()
+              .split("T")[0]
+              .replace(/-/g, "/")}
+          </p>
         </div>
       </div>
     </div>
