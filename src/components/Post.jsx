@@ -29,4 +29,3 @@ function Post(props) {
 }
 
 export default Post;
-//** */ post.publishedAt.toISOString().split("T")[0]
