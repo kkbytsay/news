@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "../assets/logo.svg";
+import { images } from "../consts/images";
 import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <header className="header">
-      <img src={Logo} alt="" className="header__logo logo" />
+      <img src={images.logo} alt="" className="header__logo logo" />
       <ul className="header__navigation navigation">
         <li className="navigation__item">
           <NavLink

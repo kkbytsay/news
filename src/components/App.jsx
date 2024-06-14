@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import routes from "../utils/routes.js";
+import routes from "../consts/routes.js";
 import Sidebar from "./Sidebar.jsx";
 
 function App() {

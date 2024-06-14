@@ -15,6 +15,7 @@
     font-weight: 600;
     line-height: 24px;
     color: $heading-color;
+    margin-top: 0px;
   }
 
   &__link {
@@ -26,13 +27,35 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    gap: 20px;
+    margin-top: 16px;
   }
 
   &__publisher {
+    color: $primary;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 4px 8px;
     margin: 0px;
+    text-align: center;
+    background-color: $secondary;
+    border-radius: 4px;
+    min-width: 60px;
   }
 
-  &__time {
-    margin: 0px;
+  &__date {
+    color: $text-color;
+    font-size: 12px;
+    font-weight: 18px;
+    margin: 5px;
+    text-align: right;
+    position: relative;
+    &::before {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      content: url("../assets/calendar-icon.svg");
+    }
   }
 }
