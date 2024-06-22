@@ -1,0 +1,13 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  &__content {
+    padding: 32px;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}

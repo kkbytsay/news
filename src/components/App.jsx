@@ -6,12 +6,14 @@ import Sidebar from "./Sidebar.jsx";
 function App() {
   return (
     <BrowserRouter basename={process.env.BASE_URL}>
-      <Sidebar />
-      <Routes>
-        {routes.map((route) => {
-          return <Route path={route.path} element={<route.Component />} />;
-        })}
-      </Routes>
+      <div className="page">
+        <Sidebar />
+        <Routes>
+          {routes.map((route) => {
+            return <Route path={route.path} element={<route.Component />} />;
+          })}
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

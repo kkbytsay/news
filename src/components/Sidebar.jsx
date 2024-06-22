@@ -3,7 +3,7 @@ import { images } from "../consts/images";
 import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
-    <header className="header">
+    <header className="header page__header">
       <img src={images.logo} alt="" className="header__logo logo" />
       <ul className="header__navigation navigation">
         <li className="navigation__item">

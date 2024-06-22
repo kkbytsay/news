@@ -13,11 +13,21 @@ function Home() {
         setPosts(data);
       });
   }, []);
+
   return (
-    <div>
-      {posts.map((post) => (
-        <Post post={post} />
-      ))}
+    <div className="page__content">
+      <h2 className="heading">Explore Channels</h2>
+      <div className="posts">
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
+      </div>
     </div>
   );
 }
