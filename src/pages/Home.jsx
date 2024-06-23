@@ -21,12 +21,6 @@ function Home() {
         {posts.map((post) => (
           <Post post={post} />
         ))}
-        {posts.map((post) => (
-          <Post post={post} />
-        ))}
-        {posts.map((post) => (
-          <Post post={post} />
-        ))}
       </div>
     </div>
   );
