@@ -9,5 +9,10 @@
     background-color: #e8e8e8;
     height: 100vh;
     overflow-y: scroll;
+    width: calc(100vw - 320px);
+  }
+
+  &__header {
+    width: 320px;
   }
 }

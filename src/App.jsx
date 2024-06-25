@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import routes from "../consts/routes.js";
-import Sidebar from "./Sidebar.jsx";
+import routes from "./consts/routes.js";
+import Sidebar from "./components/Sidebar.jsx";
 
 function App() {
   return (

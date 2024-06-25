@@ -3,7 +3,7 @@
 .header {
   box-sizing: border-box;
   padding: 33px 16px;
-  width: 300px;
+
   &__logo {
     display: block;
     margin: 0 auto;
@@ -40,7 +40,5 @@
       font-weight: bold;
       text-shadow: 1px 3px 0 #969696;
     }
-  }
-  &__item {
   }
 }

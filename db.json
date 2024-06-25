@@ -105,5 +105,38 @@
       "publishedAt": "2024-05-26T02:55:25Z",
       "content": "În partea de nord-vest a judeului Arge,\r\npe Valea Topologului, la limita cu judeul Vâlcea, se afl comuna uici, un loc\r\npitoresc, încrcat de istorie, unde familia Brtianu a avut reedin.\r\nNeamul Brtien… [+6960 chars]"
     }
+  ],
+
+  "channels": [
+    {
+      "name": "Fox news",
+      "logoUrl": "fox_news_logo.png",
+      "channelId": "1"
+    },
+    {
+      "name": "CW6 news",
+      "logoUrl": "cw_6_logo.png",
+      "channelId": "2"
+    },
+    {
+      "name": "ABC news",
+      "logoUrl": "abc_news_logo.png",
+      "channelId": "3"
+    },
+    {
+      "name": "Al jazeera",
+      "logoUrl": "aljazeera_logo.png",
+      "channelId": "4"
+    },
+    {
+      "name": "BBC news",
+      "logoUrl": "bbc_logo.png",
+      "channelId": "5"
+    },
+    {
+      "name": "CNN news",
+      "logoUrl": "cnn__logo.png",
+      "channelId": "6"
+    }
   ]
 }
