@@ -17,18 +17,22 @@ function Home() {
   } = useFetch("/channels");
   return (
     <div className="page__content">
-      <Heading>Explore chanels</Heading>
-      {isChannelsLoading && <Loader />}
-      {channelsError && <div>{channelsError}</div>}
-      <div className="channels">
-        {channels && channels.map((channel) => <Channel channel={channel} />)}
-      </div>
-      <Heading>Today's Headlines</Heading>
-      {isPostsLoading && <Loader />}
-      {postsError && <div>{postsError}</div>}
-      <div className="posts">
-        {posts && posts.map((post) => <Post post={post} />)}
-      </div>
+      <section className="section channels-section">
+        <Heading>Explore channels</Heading>
+        {isChannelsLoading && <Loader />}
+        {channelsError && <div>{channelsError}</div>}
+        <div className="channels">
+          {channels && channels.map((channel) => <Channel channel={channel} />)}
+        </div>
+      </section>
+      <section className="section headlines-section">
+        <Heading>Today's Headlines</Heading>
+        {isPostsLoading && <Loader />}
+        {postsError && <div>{postsError}</div>}
+        <div className="posts">
+          {posts && posts.map((post) => <Post post={post} />)}
+        </div>
+      </section>
     </div>
   );
 }

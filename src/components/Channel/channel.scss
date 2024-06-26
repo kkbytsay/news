@@ -5,10 +5,26 @@
   height: 158px;
   background-color: #fff;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s;
   &__title {
-    color: $primary;
-    font-weight: 900;
+    color: $heading_color;
+    font-weight: bold;
     font-size: 16px;
     line-height: 24px;
+    margin: 32px 0px 16px 0px;
+    text-decoration: none;
+  }
+
+  &__image {
+    margin-top: auto;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.2);
   }
 }
