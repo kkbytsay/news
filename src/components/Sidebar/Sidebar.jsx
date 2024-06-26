@@ -1,5 +1,5 @@
 import React from "react";
-import { images } from "../consts/images";
+import { images } from "../../consts/images";
 import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (

@@ -110,32 +110,32 @@
   "channels": [
     {
       "name": "Fox news",
-      "logoUrl": "fox_news_logo.png",
+      "logoUrl": "https://i.ibb.co/MDv3Pgb/fox-news-logo.png",
       "channelId": "1"
     },
     {
       "name": "CW6 news",
-      "logoUrl": "cw_6_logo.png",
+      "logoUrl": "https://i.ibb.co/s5yk486/cw-6-logo.png",
       "channelId": "2"
     },
     {
       "name": "ABC news",
-      "logoUrl": "abc_news_logo.png",
+      "logoUrl": "https://i.ibb.co/3MqQ4Rn/abc-news-logo.png",
       "channelId": "3"
     },
     {
       "name": "Al jazeera",
-      "logoUrl": "aljazeera_logo.png",
+      "logoUrl": "https://i.ibb.co/TmJYv8b/aljazeera-logo.png",
       "channelId": "4"
     },
     {
       "name": "BBC news",
-      "logoUrl": "bbc_logo.png",
+      "logoUrl": "https://i.ibb.co/bPX4DsL/bbc-logo.png",
       "channelId": "5"
     },
     {
       "name": "CNN news",
-      "logoUrl": "cnn__logo.png",
+      "logoUrl": "https://i.ibb.co/StRWvdQ/cnn-logo.png",
       "channelId": "6"
     }
   ]

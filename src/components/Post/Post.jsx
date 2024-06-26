@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { images } from "../consts/images";
-import headingSlise from "../utils/headingSlice";
-import formatDate from "../utils/formatDate";
+import { images } from "../../consts/images";
+import headingSlise from "../../utils/headingSlice";
+import formatDate from "../../utils/formatDate";
 
 function Post(props) {
   return (

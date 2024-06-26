@@ -1,5 +1,5 @@
 import Explore from "../pages/Explore.jsx";
-import Home from "../pages/Home.jsx";
+import Home from "../pages/Home/Home.jsx";
 import Saved from "../pages/Saved.jsx";
 import Subscriptions from "../pages/Subscriptions.jsx";
 
