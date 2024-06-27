@@ -138,5 +138,10 @@
       "logoUrl": "https://i.ibb.co/StRWvdQ/cnn-logo.png",
       "channelId": "6"
     }
-  ]
+  ],
+  "channel": {
+    "1": {
+      "name": "ABC news"
+    }
+  }
 }

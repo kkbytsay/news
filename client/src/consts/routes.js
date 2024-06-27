@@ -1,3 +1,4 @@
+import Channel from "../pages/Channel/Channel.jsx";
 import Explore from "../pages/Explore.jsx";
 import Home from "../pages/Home/Home.jsx";
 import Saved from "../pages/Saved.jsx";
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "subscriptions",
     Component: Subscriptions,
+  },
+  {
+    path: "channel/:channelId",
+    Component: Channel,
   },
 ];
 
