@@ -8,9 +8,7 @@ function Post(props) {
   return (
     <div className="post">
       <img
-        src={
-          props.post.urlToImage ? props.post.urlToImage : images.thumbnailStub
-        }
+        src={props.post.image_url ? props.post.image_url : images.thumbnailStub}
         alt="Article thumbnail"
         className="post__thumbnail"
       />
@@ -19,8 +17,10 @@ function Post(props) {
           <h2 className="post__title">{headingSlise(props.post.title)}</h2>
         </Link>
         <div className="post_info">
-          <p className="post__publisher">{props.post.source.name}</p>
-          <p className="post__date">{formatDate(props.post.publishedAt)}</p>
+          <p className="post__publisher">
+            {props.post.author !== "null" ? props.post.author : "Jhon Doe"}
+          </p>
+          <p className="post__date">{formatDate(props.post.create_date)}</p>
         </div>
       </div>
     </div>

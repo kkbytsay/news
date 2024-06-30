@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Channel(props) {
   return (
-    <Link to={`/channel/${props.channel.channelId}`} className="channel-link">
+    <Link to={`/channel/${props.channel.id}`} className="channel-link">
       <div className="channel">
         <img className="channel__image" src={props.channel.logoUrl} />
         <h3 className="channel__title">{props.channel.name}</h3>
