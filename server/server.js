@@ -42,6 +42,14 @@ app.get("/article/:id", async (req, res) => {
   res.json(result.rows);
 });
 
+app.get("/articles/channel/:id", async (req, res) => {
+  const result = await client.query(
+    `SELECT * from news.articles where channel_id = '${req.params.id}'`
+  );
+  console.log(`id = ${req.params.id}`);
+  res.json(result.rows);
+});
+
 app.get("/channels", async (req, res) => {
   const result = await client.query(`SELECT * from news.channels`);
   res.json(result.rows);
