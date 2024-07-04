@@ -126,3 +126,26 @@ app.get("/recall/:query", async (req, res) => {
   data.articles.map((item) => setArticle(item));
   res.json(data);
 });
+
+function pageinationResults(page, pageSize, data) {
+  const res = data.reduce(
+    (p, c) => {
+      if (p[p.length - 1].length == pageSize) {
+        p.push([]);
+      }
+
+      p[p.length - 1].push(c);
+      return p;
+    },
+    [[]]
+  );
+  return res[page - 1];
+}
+
+app.get("/articles/params/:page&:pageSize", async (req, res) => {
+  const result = await client.query(`SELECT * from news.articles`);
+  const page = req.params.page;
+  const pageSize = req.params.pageSize;
+  const pageItems = pageinationResults(page, pageSize, result.rows);
+  res.json({ count: result.rows.length, items: pageItems });
+});

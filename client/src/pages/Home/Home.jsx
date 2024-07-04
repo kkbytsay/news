@@ -9,16 +9,18 @@ import usePagination from "../../hooks/usePagination.js";
 function Home() {
   const { nextPage, prevPage, paginate, page, pages, calcPages, itemsPerPage } =
     usePagination(100, 10);
+
   const {
     data: posts,
     isLoading: isPostsLoading,
     error: postsError,
-  } = useFetch(`/articles/page=${page}`);
+  } = useFetch(`/articles/params/${page}&${itemsPerPage}`);
   const {
     data: channels,
     isLoading: isChannelsLoading,
     error: channelsError,
   } = useFetch("/channels");
+
   return (
     <div className="page__content">
       <section className="section channels-section">
