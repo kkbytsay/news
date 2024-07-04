@@ -4,12 +4,16 @@ import useFetch from "../../hooks/useFetch.js";
 import Loader from "../../components/Loader/Loader.jsx";
 import Channel from "../../components/Channel/Channel.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
+import Pagination from "../../components/Pagination/Pagination.jsx";
+import usePagination from "../../hooks/usePagination.js";
 function Home() {
+  const { nextPage, prevPage, paginate, page, pages, calcPages, itemsPerPage } =
+    usePagination(100, 10);
   const {
     data: posts,
     isLoading: isPostsLoading,
     error: postsError,
-  } = useFetch("/articles");
+  } = useFetch(`/articles/page=${page}`);
   const {
     data: channels,
     isLoading: isChannelsLoading,
@@ -30,8 +34,16 @@ function Home() {
         {isPostsLoading && <Loader />}
         {postsError && <div>{postsError}</div>}
         <div className="posts">
-          {posts && posts.map((post) => <Post post={post} />)}
+          {posts && posts.items.map((post) => <Post post={post} />)}
         </div>
+
+        <Pagination
+          nextPage={(e) => nextPage(e)}
+          prevPage={(e) => prevPage(e)}
+          paginate={(e) => paginate(e)}
+          page={page}
+          pages={pages}
+        />
       </section>
     </div>
   );

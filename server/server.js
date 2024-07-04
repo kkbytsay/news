@@ -32,7 +32,7 @@ const channelsArray = channels.rows.map((item) => {
 
 app.get("/articles", async (req, res) => {
   const result = await client.query(`SELECT * from news.articles`);
-  res.json(result.rows);
+  res.json({ count: result.rows.length, items: result.rows });
 });
 
 app.get("/article/:id", async (req, res) => {
@@ -46,7 +46,6 @@ app.get("/articles/channel/:id", async (req, res) => {
   const result = await client.query(
     `SELECT * from news.articles where channel_id = '${req.params.id}'`
   );
-  console.log(`id = ${req.params.id}`);
   res.json(result.rows);
 });
 
@@ -55,11 +54,11 @@ app.get("/channels", async (req, res) => {
   res.json(result.rows);
 });
 
-app.get("/channel/:uuid", async (req, res) => {
+app.get("/channel/:id", async (req, res) => {
   const result = await client.query(
-    `SELECT * from news.channels where id = ${req.params.uuid}`
+    `SELECT * from news.channels where id = '${req.params.id}'`
   );
-  res.json(result.rows);
+  res.json(result.rows[0]);
 });
 
 async function channelsIncludeCheck(channelName) {
