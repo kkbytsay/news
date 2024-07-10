@@ -1,9 +1,7 @@
 import React from "react";
-import usePagination from "../../hooks/usePagination";
 import createArray from "../../utils/createArray";
 
 export default function Pagination(props) {
-  console.log(props);
   return (
     <div className="pagination">
       <ul className="pagination__list">

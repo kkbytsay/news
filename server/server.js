@@ -149,3 +149,8 @@ app.get("/articles/params/:page&:pageSize", async (req, res) => {
   const pageItems = pageinationResults(page, pageSize, result.rows);
   res.json({ count: result.rows.length, items: pageItems });
 });
+
+app.get("/articles/count", async (req, res) => {
+  const result = await client.query(`SELECT count(*) from news.articles`);
+  res.json({ count: result.rows[0].count });
+});
