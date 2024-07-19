@@ -1,8 +1,7 @@
 import Channel from "../pages/Channel/Channel.jsx";
-import Explore from "../pages/Explore.jsx";
+import Explore from "../pages/Explore/Explore.jsx";
 import Home from "../pages/Home/Home.jsx";
-import Saved from "../pages/Saved.jsx";
-import Subscriptions from "../pages/Subscriptions.jsx";
+import Post from "../pages/Post/Post.jsx";
 
 const routes = [
   {
@@ -14,17 +13,12 @@ const routes = [
     Component: Explore,
   },
   {
-    path: "saved",
-    Component: Saved,
-  },
-
-  {
-    path: "subscriptions",
-    Component: Subscriptions,
-  },
-  {
     path: "channel/:channelId",
     Component: Channel,
+  },
+  {
+    path: "article/:articleId",
+    Component: Post,
   },
 ];
 

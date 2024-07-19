@@ -35,18 +35,11 @@ app.get("/articles", async (req, res) => {
   res.json({ count: result.rows.length, items: result.rows });
 });
 
-app.get("/article/:id", async (req, res) => {
-  const result = await client.query(
-    `SELECT * from news.articles where id = ${req.params.id}`
-  );
-  res.json(result.rows);
-});
-
 app.get("/articles/channel/:id", async (req, res) => {
   const result = await client.query(
     `SELECT * from news.articles where channel_id = '${req.params.id}'`
   );
-  res.json(result.rows);
+  res.json({ items: result.rows, count: result.rows.length });
 });
 
 app.get("/channels", async (req, res) => {
@@ -58,7 +51,16 @@ app.get("/channel/:id", async (req, res) => {
   const result = await client.query(
     `SELECT * from news.channels where id = '${req.params.id}'`
   );
+
   res.json(result.rows[0]);
+});
+
+app.get("/channel/:id/count", async (req, res) => {
+  const result = await client.query(
+    `SELECT count(*) from news.articles where channel_id = '${req.params.id}'`
+  );
+
+  res.json({ count: result.rows[0].count });
 });
 
 async function channelsIncludeCheck(channelName) {
@@ -150,7 +152,62 @@ app.get("/articles/params/:page&:pageSize", async (req, res) => {
   res.json({ count: result.rows.length, items: pageItems });
 });
 
+app.get("/articles/channel/:id/params/:page&:pageSize", async (req, res) => {
+  const result = await client.query(
+    `SELECT * from news.articles where channel_id = '${req.params.id}'`
+  );
+  const page = req.params.page;
+  const pageSize = req.params.pageSize;
+  const pageItems = pageinationResults(page, pageSize, result.rows);
+  res.json({ count: result.rows.length, items: pageItems });
+});
+
 app.get("/articles/count", async (req, res) => {
   const result = await client.query(`SELECT count(*) from news.articles`);
   res.json({ count: result.rows[0].count });
+});
+
+app.get("/article/:id", async (req, res) => {
+  const result = await client.query(
+    `SELECT * from news.articles where id = '${req.params.id}'`
+  );
+  res.json(result.rows[0]);
+});
+
+app.get("/channels/explore", async (req, res) => {
+  try {
+    const query = `
+      SELECT
+        c.id AS channel_id,
+        c.name AS channel_name,
+        json_agg(
+          json_build_object(
+            'id', a.id,
+            'title', a.title,
+            'content', a.content,
+            'author', a.author,
+            'create_date', a.create_date,
+            'image_url', a.image_url
+          )
+        ) AS articles
+      FROM news.channels c
+      LEFT JOIN news.articles a ON c.id = a.channel_id
+      GROUP BY c.id, c.name
+    `;
+
+    const { rows } = await client.query(query);
+
+    const result = rows.map((row) => ({
+      channel: {
+        id: row.channel_id,
+        name: row.channel_name,
+      },
+      articles: row.articles,
+    }));
+
+    res.json(result);
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Error fetching data" });
+  }
 });

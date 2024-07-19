@@ -1,6 +1,7 @@
 import React from "react";
 import { images } from "../../consts/images";
 import { NavLink } from "react-router-dom";
+import "./sidebar.scss";
 function Sidebar() {
   return (
     <header className="header page__header">
@@ -28,30 +29,6 @@ function Sidebar() {
             to="/explore"
           >
             Explore
-          </NavLink>
-        </li>
-        <li className="navigation__item">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? " navigation__link_active navigation__link"
-                : "navigation__link"
-            }
-            to="/saved"
-          >
-            Saved
-          </NavLink>
-        </li>
-        <li className="navigation__item">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? " navigation__link_active navigation__link"
-                : "navigation__link"
-            }
-            to="/subscriptions"
-          >
-            Subcriptions
           </NavLink>
         </li>
       </ul>

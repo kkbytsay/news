@@ -6,7 +6,8 @@ import Channel from "../../components/Channel/Channel.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import usePagination from "../../hooks/usePagination.js";
-
+import Section from "../../components/Section/Section.jsx";
+import "./home.scss";
 function Home() {
   const {
     data: counter,
@@ -14,7 +15,7 @@ function Home() {
     error: itemsError,
   } = useFetch("/articles/count");
 
-  const { nextPage, prevPage, paginate, page, pages, calcPages, itemsPerPage } =
+  const { nextPage, prevPage, paginate, page, pagesArray, itemsPerPage, DOTS } =
     usePagination(counter, 10);
 
   const {
@@ -31,15 +32,15 @@ function Home() {
 
   return (
     <div className="page__content">
-      <section className="section channels-section">
+      <Section className=" channels-section">
         <Heading>Explore channels</Heading>
         {isChannelsLoading && <Loader />}
         {channelsError && <div>{channelsError}</div>}
         <div className="channels">
           {channels && channels.map((channel) => <Channel channel={channel} />)}
         </div>
-      </section>
-      <section className="section headlines-section">
+      </Section>
+      <Section className="section headlines-section">
         <Heading>Today's Headlines</Heading>
         {isPostsLoading && <Loader />}
         {postsError && <div>{postsError}</div>}
@@ -52,10 +53,11 @@ function Home() {
             prevPage={(e) => prevPage(e)}
             paginate={(e) => paginate(e)}
             page={page}
-            pages={pages}
+            pages={pagesArray}
+            DOTS={DOTS}
           />
         )}
-      </section>
+      </Section>
     </div>
   );
 }

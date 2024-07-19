@@ -1,9 +1,6 @@
-function createArray(maxItem) {
-  const arr = [];
-  for (let index = 1; index <= maxItem; index++) {
-    arr.push(index);
-  }
-  return arr;
+function createArray(start, end) {
+  let length = end - start + 1;
+  return Array.from({ length }, (_, idx) => idx + start);
 }
 
 export default createArray;

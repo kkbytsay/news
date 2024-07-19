@@ -30,6 +30,10 @@
     margin-top: 16px;
   }
 
+  &__info {
+    min-width: 80px;
+  }
+
   &__publisher {
     color: $primary;
     font-size: 11px;
@@ -54,7 +58,7 @@
       position: absolute;
       left: 0px;
       top: 0px;
-      content: url("../assets/calendar-icon.svg");
+      content: url("../../assets/calendar-icon.svg");
     }
   }
 }

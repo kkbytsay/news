@@ -1,0 +1,17 @@
+.article {
+  &__thumbnail {
+    border-radius: 15px;
+    width: 500px;
+  }
+
+  &__info {
+    display: flex;
+    margin-top: 15px;
+    gap: 16px;
+  }
+
+  &__content {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+}

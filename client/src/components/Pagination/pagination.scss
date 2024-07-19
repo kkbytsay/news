@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.pagination {
+  margin-top: 20px;
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  &__btn {
+    font-size: 18px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: $text-color;
+    transition: all 0.5s;
+    border-radius: 5px;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $primary;
+      background-color: $secondary;
+    }
+  }
+}
