@@ -24,4 +24,9 @@
 
 .channel-link {
   text-decoration: none;
+  &_active {
+    .channel__title {
+      color: $primary;
+    }
+  }
 }

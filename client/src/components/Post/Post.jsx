@@ -20,7 +20,7 @@ function Post(props) {
         </Link>
         <div className="post__info">
           <p className="post__publisher">
-            {props.post.author !== "null" ? props.post.author : "Jhon Doe"}
+            {props.post.author == null ? "Jhon Doe" : props.post.author}
           </p>
           <p className="post__date">{formatDate(props.post.create_date)}</p>
         </div>

@@ -1,13 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import Post from "../../components/Post/Post.jsx";
 import useFetch from "../../hooks/useFetch.js";
 import Loader from "../../components/Loader/Loader.jsx";
-import Channel from "../../components/Channel/Channel.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import usePagination from "../../hooks/usePagination.js";
 import Section from "../../components/Section/Section.jsx";
 import "./home.scss";
+import ChannelsList from "../../components/ChannelsList/ChannelsList.jsx";
 function Home() {
   const {
     data: counter,
@@ -24,23 +24,10 @@ function Home() {
     error: postsError,
   } = useFetch(`/articles/params/${page}&${itemsPerPage}`);
 
-  const {
-    data: channels,
-    isLoading: isChannelsLoading,
-    error: channelsError,
-  } = useFetch("/channels");
-
   return (
     <div className="page__content">
-      <Section className=" channels-section">
-        <Heading>Explore channels</Heading>
-        {isChannelsLoading && <Loader />}
-        {channelsError && <div>{channelsError}</div>}
-        <div className="channels">
-          {channels && channels.map((channel) => <Channel channel={channel} />)}
-        </div>
-      </Section>
       <Section className="section headlines-section">
+        <ChannelsList />
         <Heading>Today's Headlines</Heading>
         {isPostsLoading && <Loader />}
         {postsError && <div>{postsError}</div>}

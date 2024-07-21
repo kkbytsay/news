@@ -6,6 +6,7 @@ import Post from "../../components/Post/Post.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
 import usePagination from "../../hooks/usePagination.js";
 import Pagination from "../../components/Pagination/Pagination.jsx";
+import ChannelsList from "../../components/ChannelsList/ChannelsList.jsx";
 
 export default function Channel() {
   let { channelId } = useParams();
@@ -30,6 +31,7 @@ export default function Channel() {
   );
   return (
     <div className="page__content">
+      <ChannelsList />
       {isChannelLoading && <Loader />}
       {channelError && <div>{channelError}</div>}
       {channel && <Heading>News from {channel.name} </Heading>}
