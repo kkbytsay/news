@@ -21,7 +21,6 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const client = new Client(dbconfig);
-await client.connect();
 
 app.listen(PORT, () => {
   console.log(`Server running on port: http://localhost:${PORT}`);
@@ -37,9 +36,8 @@ const getChannels = async () => {
   }
 };
 
-const channelsArray = await getChannels();
-
 const channelsIncludeCheck = async (channelName) => {
+  const channelsArray = await getChannels();
   try {
     const channel = channelsArray.find((item) => item.name === channelName);
     if (channel) {
@@ -53,6 +51,7 @@ const channelsIncludeCheck = async (channelName) => {
 };
 
 const createChannel = async (channelName) => {
+  const channelsArray = await getChannels();
   try {
     const channel = { id: uid(32), name: channelName };
     channelsArray.push(channel);
