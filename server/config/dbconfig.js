@@ -1,7 +1,7 @@
 const dbconfig = {
-  user: "application",
-  password: "qazwsx123",
-  host: "localhost",
+  user: "postgres",
+  password: "qwe123",
+  host: "79.174.93.160",
   port: "5432",
   database: "news",
 };
