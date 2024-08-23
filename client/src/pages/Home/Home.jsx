@@ -28,7 +28,7 @@ function Home() {
     <div className="page__content">
       <Section className="section headlines-section">
         <ChannelsList />
-        <Heading>Today's Headlines</Heading>
+        <Heading>Today's Most Viewed</Heading>
         {isPostsLoading && <Loader />}
         {postsError && <div>{postsError}</div>}
         <div className="posts">
